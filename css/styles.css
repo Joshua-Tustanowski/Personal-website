@@ -77,7 +77,7 @@ body {
   justify-content: space-around;
   border: none;
   outline: none;
-  animation: socials-raise 4s ease forwards;
+  animation: socials-raise 2.5s ease forwards;
 }
 
 /* background color and transtion styling for images */
@@ -104,6 +104,12 @@ body {
   transition: all 0.5s ease;
   transform: translateY(-15px);
   color: #7289da !important;
+}
+
+#linkedin i:hover {
+  transition: all 0.5s ease;
+  transform: translateY(-15px);
+  color: #2867b2 !important;
 }
 
 /* navigation bar animation */
