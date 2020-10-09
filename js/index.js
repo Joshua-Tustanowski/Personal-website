@@ -16,11 +16,25 @@ function openSlideMenu(x) {
 }
 
 // --------------- profession swapper --------------- //
-var prof = document.getElementById("demo-to-view");
+const prof = document.getElementById("demo-to-view");
 professions = ["Software Developer", "Physicist", "Crossword enthusiast"];
 var i = 1;
 
-setInterval(() => {
-  prof.innerText = professions[i];
-  i = (i + 1) % professions.length;
-}, 1300);
+const isHover = e => e.parentElement.querySelector(':hover') === e;
+
+document.addEventListener('mousemove', function checkHover() {
+  const hovered = isHover(prof);
+  if (hovered !== checkHover.hovered){
+    console.log(hovered ? 'hovered' : 'not hovered');
+    if (isHover(prof)){
+        const interval = setInterval(() => {
+          if(!isHover(prof)){
+            clearInterval(interval);
+          }
+          prof.innerText = professions[i];
+          i = (i + 1) % professions.length;
+        }, 1500);
+      }
+    }
+    checkHover.hovered = hovered;
+  })
